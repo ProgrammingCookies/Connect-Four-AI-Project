@@ -68,16 +68,18 @@ def clearscreen():
     clear = lambda: os.system('cls')
     clear()
 
-# written by Axel L.
+# written by Axel L. & Roy L.
 # 2023-03-19
 def drop(board, column, color):
     nrRows = len(board);
-    if(board[column][0] != None):
+    if(board[0][column - 1] != None):
         return -1;
-    for y in range(nrRows): #each row
-        if(board[column][nrRows - 1 - y] != None):
-            board[column][nrRows - y] = color;
+    for y in range(nrRows - 1): #each row
+        if(board[y + 1][column - 1] != None):
+            board[y][column - 1] = color;
             return nrRows - y;
+    board[nrRows - 1][column - 1] = color;
+    return nrRows - 1;
 
 # written by Axel L.
 # 2023-03-19
