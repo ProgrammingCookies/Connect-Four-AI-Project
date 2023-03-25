@@ -2,26 +2,14 @@ import os
 import time
 
 # create a 7 x 6 game board
-gameboard = [[None, None, None, None, None, None, None],
-[None, None, None, None, None, None, None],
-[None, None, None, None, 0, None, None],
-[None, None, None, None, 1, None, None],
-[None, None, None, None, 0, None, None],
-[None, None, None, None, 1, None, None]]
-
-gameboard2 = [[None, None, None, None, None, None, None],
-[None, None, None, None, 1, None, None],
-[None, None, None, None, 0, None, None],
-[None, None, None, None, 1, None, None],
-[None, None, None, None, 0, None, None],
-[None, None, None, None, 1, None, None]]
-
-gameboard3 = [[None, None, None, None, 0, None, None],
-[None, None, None, None, 1, None, None],
-[None, None, None, None, 0, None, None],
-[None, None, None, None, 1, None, None],
-[None, None, None, None, 0, None, None],
-[None, None, None, None, 1, None, None]]
+def initboard():
+    gameboard = [[None, None, None, None, None, None, None],
+    [None, None, None, None, None, None, None],
+    [None, None, None, None, None, None, None],
+    [None, None, None, None, None, None, None],
+    [None, None, None, None, None, None, None],
+    [None, None, None, None, None, None, None]]
+    return gameboard
 
 # written by Roy L.
 # 2023-03-19
