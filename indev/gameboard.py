@@ -2,7 +2,7 @@ import os
 import time
 
 # create a 7 x 6 game board
-def initboard():
+def initBoard():
     gameboard = [[None, None, None, None, None, None, None],
     [None, None, None, None, None, None, None],
     [None, None, None, None, None, None, None],
@@ -13,7 +13,7 @@ def initboard():
 
 # written by Roy L.
 # 2023-03-19
-def printgame(gameboard):
+def printGame(gameboard):
     print(" --- --- --- --- --- --- --- ")
     print(" ", end = '')
     for y in range(6):
@@ -52,7 +52,7 @@ def printgame(gameboard):
 
 # written by Roy L.
 # 2023-03-19
-def clearscreen():
+def clearScreen():
     clear = lambda: os.system('cls')
     clear()
 
@@ -123,21 +123,7 @@ def fourConnectedCheck(board, row, column, color):
             break;
     return False;
     
-
-# testkod, ta bort
-clearscreen()
-printgame(gameboard)
-time.sleep(2)
-clearscreen()
-printgame(gameboard2)
-time.sleep(2)
-clearscreen()
-printgame(gameboard3)
-time.sleep(2)
-clearscreen()
-print("hello")
-
-# visualization of the gameboard
+# visualization of an empty gameboard
 # --- --- --- --- --- --- ---
 #    |   |   |   |   |   |   
 # --- --- --- --- --- --- ---
