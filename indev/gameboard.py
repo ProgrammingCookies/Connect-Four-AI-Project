@@ -69,56 +69,59 @@ def drop(board, column, color):
     board[nrRows - 1][column - 1] = color;
     return nrRows - 1;
 
+
 # written by Axel L.
 # 2023-03-19
-#Checks if someone has won
+#Checks if someone has won, row and column arguments are entered as 0-5/0-6
 def fourConnectedCheck(board, row, column, color):
     nrRows = len(board);
     nrColumns = len(board[0]);
     #To the right
     nrConnected = 1;
-    for x in range(nrColumns - column):
+    for x in range(1,nrColumns - column):
         if(board[row][column + x] == color):
             nrConnected += 1;
             if(nrConnected == 4):
                 return True;
-            else:
-                break;
         else:
             break;
     #To the left
     nrConnected = 1;
-    for x in range(column):
+    for x in range(1,column):
         if(board[row][column - x] == color):
             nrConnected += 1;
             if(nrConnected == 4):
                 return True;
-            else:
-                break;
         else:
             break;
     #South West
     nrConnected = 1;
     z = min(column, nrRows - row);
-    for x in range(z):
+    for x in range(1,z):
         if(board[row + x][column - x] == color):
             nrConnected += 1;
             if(nrConnected == 4):
                 return True;
-            else:
-                break;
         else:
             break;
     #South East
     nrConnected = 1;
     z = min(nrColumns - column, nrRows - row);
-    for x in range(z):
+    for x in range(1,z):
         if(board[row + x][column + x] == color):
             nrConnected += 1;
             if(nrConnected == 4):
                 return True;
-            else:
-                break;
+        else:
+            break;
+    #Down
+    nrConnected = 1;
+    for x in range(1,nrRows - row):
+        if(board[row+x][column] == color):
+            nrConnected += 1;
+            if(nrConnected == 4):
+                print("")
+                return True;
         else:
             break;
     return False;
