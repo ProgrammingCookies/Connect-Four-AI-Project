@@ -9,3 +9,8 @@ Day 2 (2023-03-25)
  - created initBoard function
  - decided on a naming convention
  - worked on fixing fourConnectedCheck
+
+Day 3 (2023-03-26)
+ - updated fourConnectedCheck through Git
+ - started work with the neural network
+ - began researching "one hot encoding"
