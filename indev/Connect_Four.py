@@ -1,4 +1,4 @@
-
+import gameboard
 
 def main():
     board = int[7][6];
