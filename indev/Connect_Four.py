@@ -1,7 +1,7 @@
 import gameboard
 
 def main():
-    board = int[7][6];
+    board = initBoard()
     drop(board, 1);
 
 
