@@ -79,7 +79,7 @@ def fourConnectedCheck(board, row, column, color):
     #To the right
     nrConnected = 1
     for x in range(1,nrColumns - column):
-        if(board[row][column + x] == color):
+        if(board[row - 1][column - x] == color):
             nrConnected += 1
             if(nrConnected == 4):
                 return True
@@ -88,7 +88,7 @@ def fourConnectedCheck(board, row, column, color):
     #To the left
     nrConnected = 1
     for x in range(1,column):
-        if(board[row][column - x] == color):
+        if(board[row - 1][column - x] == color):
             nrConnected += 1
             if(nrConnected == 4):
                 return True
@@ -117,7 +117,7 @@ def fourConnectedCheck(board, row, column, color):
     #Down
     nrConnected = 1
     for x in range(1,nrRows - row):
-        if(board[row+x][column] == color):
+        if(board[row+x][column - x] == color):
             nrConnected += 1
             if(nrConnected == 4):
                 print("")

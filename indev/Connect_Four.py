@@ -16,23 +16,27 @@ def twoPlayerGame():
     while(True):
         printGame(board)
         while(True):
+            userinput = input("Choose column(1-7) to drop checker. Write 'quit' to exit: ")
+            if userinput == "quit":
+                break
             try:
-                print("Choose column(1-7) to drop checker")
-                column = int(input())
-                if(column not in range(1,8)): #The user inputs 1 - 7 but in the calculus row value 0 is row the first row. Row 1.
+                column = int(userinput)
+                if((column not in range(1,8)) or (board[0][column - 1] is not None)): #The user inputs 1 - 7 but in the calculus row value 0 is row the first row. Row 1.
                     print("Something went wrong, try again")
                 else:
                     break
-            except:
-                print("Something went wrong, try again")
+            except ValueError:
+                print("Invalid input.")
         
-        if(playerOneMove):
+        if userinput == "quit":
+            break
+        elif(playerOneMove):
             color = 0
         else:
             color = 1
-        row = drop(board, column-1, color)
-        print("Rowin: " + str(row) + "Column: " + str(column-1))
-        if(fourConnectedCheck(board,row, column-1, color)):
+        row = drop(board, column, color)
+        print("Rowin: " + str(row) + " Column: " + str(column-1))
+        if(fourConnectedCheck(board,row, column, color)):
             printGame(board)
             msg = "Player" + str(color+1) + " has won!"
             print(msg)
