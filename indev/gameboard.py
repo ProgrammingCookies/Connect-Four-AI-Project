@@ -59,72 +59,72 @@ def clearScreen():
 # written by Axel L. & Roy L.
 # 2023-03-19
 def drop(board, column, color):
-    nrRows = len(board);
+    nrRows = len(board)
     if(board[0][column - 1] != None):
-        return -1;
+        return -1
     for y in range(nrRows - 1): #each row
         if(board[y + 1][column - 1] != None):
-            board[y][column - 1] = color;
-            return nrRows - y;
-    board[nrRows - 1][column - 1] = color;
-    return nrRows - 1;
+            board[y][column - 1] = color
+            return nrRows - y
+    board[nrRows - 1][column - 1] = color
+    return nrRows - 1
 
 
 # written by Axel L.
 # 2023-03-19
 #Checks if someone has won, row and column arguments are entered as 0-5/0-6
 def fourConnectedCheck(board, row, column, color):
-    nrRows = len(board);
-    nrColumns = len(board[0]);
+    nrRows = len(board)
+    nrColumns = len(board[0])
     #To the right
-    nrConnected = 1;
+    nrConnected = 1
     for x in range(1,nrColumns - column):
         if(board[row][column + x] == color):
-            nrConnected += 1;
+            nrConnected += 1
             if(nrConnected == 4):
-                return True;
+                return True
         else:
-            break;
+            break
     #To the left
-    nrConnected = 1;
+    nrConnected = 1
     for x in range(1,column):
         if(board[row][column - x] == color):
-            nrConnected += 1;
+            nrConnected += 1
             if(nrConnected == 4):
-                return True;
+                return True
         else:
-            break;
+            break
     #South West
-    nrConnected = 1;
-    z = min(column, nrRows - row);
+    nrConnected = 1
+    z = min(column, nrRows - row)
     for x in range(1,z):
         if(board[row + x][column - x] == color):
-            nrConnected += 1;
+            nrConnected += 1
             if(nrConnected == 4):
-                return True;
+                return True
         else:
-            break;
+            break
     #South East
-    nrConnected = 1;
-    z = min(nrColumns - column, nrRows - row);
+    nrConnected = 1
+    z = min(nrColumns - column, nrRows - row)
     for x in range(1,z):
         if(board[row + x][column + x] == color):
-            nrConnected += 1;
+            nrConnected += 1
             if(nrConnected == 4):
-                return True;
+                return True
         else:
-            break;
+            break
     #Down
-    nrConnected = 1;
+    nrConnected = 1
     for x in range(1,nrRows - row):
         if(board[row+x][column] == color):
-            nrConnected += 1;
+            nrConnected += 1
             if(nrConnected == 4):
                 print("")
-                return True;
+                return True
         else:
-            break;
-    return False;
+            break
+    return False
     
 # visualization of an empty gameboard
 # --- --- --- --- --- --- ---
