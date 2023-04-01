@@ -16,9 +16,9 @@ Day 3 (2023-03-26)
  - began researching "one hot encoding"
 
 Day 4
- - Reworked input layer and the convolutional layer of the neural network
- - Implemented one hot encoding
- - Made the gameboard understandable for the neural network no matter which color it plays as
- - Made it possible for 2 AI's to face eachother
- - Made quitting possible
- - Fixed some bugs
+ - reworked input layer and the convolutional layer of the neural network
+ - implemented one hot encoding
+ - made the gameboard understandable for the neural network no matter which color it plays as
+ - made it possible for 2 AI's to face eachother
+ - made quitting possible
+ - fixed some bugs
