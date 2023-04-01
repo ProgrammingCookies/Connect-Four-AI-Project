@@ -1,5 +1,5 @@
 import sys
-from gameboard import *
+from Gameboard import *
 
 sys.path.append("..")
 
