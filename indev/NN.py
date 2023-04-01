@@ -2,7 +2,7 @@ import tensorflow as tf
 
 
 #Intialize NN
-def NNInitialization():
+def nnInit():
     # Define the input layer
     input_layer = tf.keras.layers.Input(shape=(6,7,3))
 
@@ -30,7 +30,7 @@ def NNInitialization():
 
 #Remaking a square into one hot encoding
 #Process the board and remake it into one hot enconding
-def OneHotEncoding(board):
+def oneHotEncoding(board):
     # Convert the array to one-hot encoding using tf.one_hot()
     one_hot_arr = tf.one_hot(board, depth=3)
 
@@ -39,6 +39,6 @@ def OneHotEncoding(board):
     return one_hot_arr;
 
 #Make prediction with the board
-def NNPrediction(board, model):
-    oneHot = OneHotEncoding(board)
+def nnPrediction(board, model):
+    oneHot = oneHotEncoding(board)
     return int(tf.argmax(model.predict(oneHot), axis=1))
