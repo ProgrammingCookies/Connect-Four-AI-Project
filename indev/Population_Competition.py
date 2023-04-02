@@ -5,6 +5,7 @@ import copy
 import numpy as np
 import random
 
+#Made by Axel Lindqvist 02-04-2023
 def matchBetweenAI(modelA, modelB):
     board = initBoard()
     while(True):
@@ -19,6 +20,7 @@ def matchBetweenAI(modelA, modelB):
         if tie(board):
             return 0
 
+#Made by Axel Lindqvist 02-04-2023
 #Initialize Population
 def initPopulation(populationSize):
     population = []
@@ -30,6 +32,7 @@ def initPopulation(populationSize):
         population.append(network)
     return population
 
+#Made by Axel Lindqvist 02-04-2023
 def competition(population, challengerIndex, scoreboard):
     #Going from challengerIndex to population because every element challenges everyone in front of it in the array.
     #This way challengerIndex have already fought everyone before it.
@@ -42,6 +45,7 @@ def competition(population, challengerIndex, scoreboard):
             localScores[i - challengerIndex] -= resultA - resultB #The challengers score
     return localScores
 
+#Made by Axel Lindqvist 02-04-2023
 #TODO Decide how many parents each new offspring will have
 # Create offspring
 def initOffspring(population, inputSize, outputSize, mutationRate, tourSize):
@@ -55,7 +59,7 @@ def initOffspring(population, inputSize, outputSize, mutationRate, tourSize):
         offspring.append(child_network)
     return offspring
 
-
+#Made by Axel Lindqvist 02-04-2023
 #Tournament selection to find parents, finding the highest performance one out of a subset to create some variance instead of just say, taking the top 5 performers. 
 def tournamentSelection(population, tournament_size):
     # Select a random subset of the population
@@ -66,6 +70,7 @@ def tournamentSelection(population, tournament_size):
 
     return winner
 
+#Made by Axel Lindqvist 02-04-2023
 #Find a specific number of parents with tournament selection.
 def tournamentSelectionMultipleParents(population, numParents, tourSize):
     parents = []

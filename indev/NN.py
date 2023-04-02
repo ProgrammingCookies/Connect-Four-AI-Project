@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-
+#Made by Axel Lindqvist 01-04-2023
 #Intialize NN
 def nnInit():
     # Define the input layer
@@ -28,6 +28,7 @@ def nnInit():
     model.summary()
     return model;
 
+#Made by Axel Lindqvist 01-04-2023
 #Remaking a square into one hot encoding
 #Process the board and remake it into one hot enconding
 def oneHotEncoding(board):
@@ -38,11 +39,13 @@ def oneHotEncoding(board):
     one_hot_arr = tf.reshape(one_hot_arr, [1, 6, 7, 3])
     return one_hot_arr;
 
+#Made by Axel Lindqvist 01-04-2023
 #Make prediction with the board
 def nnPrediction(board, model):
     oneHot = oneHotEncoding(board)
     return int(tf.argmax(model.predict(oneHot), axis=1))
 
+#Made by Axel Lindqvist 01-04-2023
 #In the NN the value 1 is friendly piece and 2 is enemy, 0 is empty
 def understandableBoard(board, color):
     c = copy.deepcopy(board)
