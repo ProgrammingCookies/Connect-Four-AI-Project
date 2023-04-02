@@ -57,7 +57,7 @@ def initOffspring(population, inputSize, outputSize, mutationRate, tourSize):
 
 
 #Tournament selection to find parents, finding the highest performance one out of a subset to create some variance instead of just say, taking the top 5 performers. 
-def tournament_selection(population, tournament_size):
+def tournamentSelection(population, tournament_size):
     # Select a random subset of the population
     tournament = random.sample(population, tournament_size)
 
@@ -70,7 +70,7 @@ def tournament_selection(population, tournament_size):
 def tournamentSelectionMultipleParents(population, numParents, tourSize):
     parents = []
     for i in range(numParents):
-        parent = tournament_selection(population, tourSize)
+        parent = tournamentSelection(population, tourSize)
         parents.append(parent)
     return parents
 
