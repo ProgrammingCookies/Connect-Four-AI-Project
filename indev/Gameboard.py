@@ -70,6 +70,12 @@ def drop(board, column, color):
     return nrRows - 1
 
 
+def tie(board):
+    for i in range(7):
+        if(board[0][i] == None):
+            return False
+    return True
+
 # written by Axel L.
 # 2023-03-19
 #Checks if someone has won, row and column arguments are entered as 0-5/0-6
