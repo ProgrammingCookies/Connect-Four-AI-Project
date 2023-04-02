@@ -22,3 +22,8 @@ Day 4
  - made it possible for 2 AI's to face eachother
  - made quitting possible
  - fixed some bugs
+ 
+ Day 5
+  - Did some small fixes
+  - Create functions to initialize population and its offspring and made a function for competition between the neural networks. This competition function will be used as our fitness function.
+  - Began implementing functions to visualize the neural networks while in training
