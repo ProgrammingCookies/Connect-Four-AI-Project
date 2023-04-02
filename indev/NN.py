@@ -42,3 +42,16 @@ def oneHotEncoding(board):
 def nnPrediction(board, model):
     oneHot = oneHotEncoding(board)
     return int(tf.argmax(model.predict(oneHot), axis=1))
+
+#In the NN the value 1 is friendly piece and 2 is enemy, 0 is empty
+def understandableBoard(board, color):
+    c = copy.deepcopy(board)
+    for x in range(len(c[0])):
+        for y in range(c):
+            if c[y][x] == None:
+                c[y][x] = 0
+            elif color == 0:
+                c[y][x] += 1
+            else:
+                c[y][x] = 2 - c[y][x]  
+    return c

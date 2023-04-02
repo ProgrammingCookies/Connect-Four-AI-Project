@@ -3,20 +3,6 @@ from Gameboard import *
 from Connect_Four import * 
 import copy
 
-#In the NN the value 1 is friendly piece and 2 is enemy, 0 is empty
-def understandableBoard(board, color):
-    c = copy.deepcopy(board)
-    for x in range(len(c[0])):
-        for y in range(c):
-            if c[y][x] == None:
-                c[y][x] = 0
-            elif color == 0:
-                c[y][x] += 1
-            else:
-                c[y][x] = 2 - c[y][x]  
-    return c
-
-
 def matchBetweenAI(modelA, modelB):
     board = initBoard()
     while(True):
