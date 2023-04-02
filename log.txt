@@ -14,3 +14,11 @@ Day 3 (2023-03-26)
  - updated fourConnectedCheck through Git
  - started work with the neural network
  - began researching "one hot encoding"
+
+Day 4
+ - reworked input layer and the convolutional layer of the neural network
+ - implemented one hot encoding
+ - made the gameboard understandable for the neural network no matter which color it plays as
+ - made it possible for 2 AI's to face eachother
+ - made quitting possible
+ - fixed some bugs
